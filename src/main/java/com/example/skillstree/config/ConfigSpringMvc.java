@@ -1,4 +1,4 @@
-package com.example.annotationconfigspring;
+package com.example.skillstree.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -6,8 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
-@ComponentScan({"com.example.annotationconfigspring"})
-public class Config {
+@ComponentScan({"com.example.skillstree"})
+public class ConfigSpringMvc {
     @Bean
     public InternalResourceViewResolver viewResolver(){
         InternalResourceViewResolver internalResourceViewResolver= new InternalResourceViewResolver();

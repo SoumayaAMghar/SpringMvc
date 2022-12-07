@@ -1,4 +1,4 @@
-package com.example.annotationconfigspring;
+package com.example.skillstree.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -11,7 +11,7 @@ public class MyWebInitilizer extends AbstractAnnotationConfigDispatcherServletIn
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[] {Config.class};
+        return new Class[] {ConfigSpringMvc.class};
     }
 
     @Override

@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Hello display</h1>
+result is : ${result}
 </body>
 </html>
