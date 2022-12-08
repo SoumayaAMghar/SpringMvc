@@ -2,6 +2,8 @@ package com.example.skillstree.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "competence", catalog = "skillstree")
 public class CompetencesEntity {
@@ -10,13 +12,16 @@ public class CompetencesEntity {
     private Long id;
     private String name;
     private String commentaire;
-    private niveau niveau;
-    @ManyToOne
-    private ApprenantsEntity apprenants;
-    enum niveau{
-        un,deux,trois
+
+    @OneToMany(mappedBy = "competence")
+    private List<ApprenantCompetence> apprenantCompetences;
+    public List<ApprenantCompetence> getApprenantCompetences() {
+        return apprenantCompetences;
     }
 
+    public void setApprenantCompetences(List<ApprenantCompetence> apprenantCompetences) {
+        this.apprenantCompetences = apprenantCompetences;
+    }
     public Long getId() {
         return id;
     }
@@ -41,19 +46,5 @@ public class CompetencesEntity {
         this.commentaire = commentaire;
     }
 
-    public CompetencesEntity.niveau getNiveau() {
-        return niveau;
-    }
 
-    public void setNiveau(CompetencesEntity.niveau niveau) {
-        this.niveau = niveau;
-    }
-
-    public ApprenantsEntity getApprenants() {
-        return apprenants;
-    }
-
-    public void setApprenants(ApprenantsEntity apprenants) {
-        this.apprenants = apprenants;
-    }
 }

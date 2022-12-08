@@ -15,14 +15,21 @@ public class ApprenantsEntity {
     private String email;
     private String password;
 
-    @OneToMany(mappedBy = "apprenants")
-    private List<CompetencesEntity> conpetences;
-    @ManyToOne
-    private FormateursEntity formateurs;
+    public List<ApprenantCompetence> getApprenantCompetences() {
+        return apprenantCompetences;
+    }
+
+    public void setApprenantCompetences(List<ApprenantCompetence> apprenantCompetences) {
+        this.apprenantCompetences = apprenantCompetences;
+    }
+
+    @OneToMany(mappedBy = "apprenant")
+    private List<ApprenantCompetence> apprenantCompetences;
 
     public Long getId() {
         return id;
     }
+
 
     public void setId(Long id) {
         this.id = id;
@@ -60,19 +67,4 @@ public class ApprenantsEntity {
         this.password = password;
     }
 
-    public List<CompetencesEntity> getConpetences() {
-        return conpetences;
-    }
-
-    public void setConpetences(List<CompetencesEntity> conpetences) {
-        this.conpetences = conpetences;
-    }
-
-    public FormateursEntity getFormateurs() {
-        return formateurs;
-    }
-
-    public void setFormateurs(FormateursEntity formateurs) {
-        this.formateurs = formateurs;
-    }
 }

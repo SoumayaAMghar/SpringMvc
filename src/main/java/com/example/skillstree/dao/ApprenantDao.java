@@ -18,18 +18,17 @@ public class ApprenantDao {
     }
 
 
-    public boolean login(String email, String password) {
+    public ApprenantsEntity login(String email, String password) {
         EntityManager entityManager = EntityManagerConfig.getConfig().getEntityManager();
         try {
             TypedQuery<ApprenantsEntity> query = entityManager.createQuery("SELECT m FROM ApprenantsEntity m WHERE m.email = :email AND m.password = :password", ApprenantsEntity.class);
             query.setParameter("email", email);
             query.setParameter("password", password);
-            if (query.getSingleResult() != null) {
-                return true;
-            }
+            ApprenantsEntity apprenant = query.getSingleResult();
+            return apprenant;
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return false;
+        return null;
     }
 }

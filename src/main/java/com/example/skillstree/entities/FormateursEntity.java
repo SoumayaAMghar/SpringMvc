@@ -14,8 +14,6 @@ public class FormateursEntity {
     private String prenom;
     private String email;
     private String password;
-    @OneToMany(mappedBy = "formateurs")
-    private List<ApprenantsEntity> apprenants;
 
     public Long getId() {
         return id;
@@ -57,11 +55,4 @@ public class FormateursEntity {
         this.password = password;
     }
 
-    public List<ApprenantsEntity> getApprenants() {
-        return apprenants;
-    }
-
-    public void setApprenants(List<ApprenantsEntity> apprenants) {
-        this.apprenants = apprenants;
-    }
 }
