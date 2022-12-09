@@ -8,18 +8,13 @@ import java.util.List;
 @IdClass(apprenantCompetencePK.class)
 public class ApprenantCompetence {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long idApp;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long idCom;
     private niveau niveau;
-    public Long getIdApprenant() {
-        return idApp;
-    }
-    public void setIdApprenant(Long idApprenant) {
-        this.idApp = idApprenant;
-    }
+
     public Long getIdCompetence() {
         return idCom;
     }

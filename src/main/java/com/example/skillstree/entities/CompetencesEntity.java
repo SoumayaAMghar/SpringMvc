@@ -13,6 +13,9 @@ public class CompetencesEntity {
     private String name;
     private String commentaire;
 
+    /*@ManyToMany
+    @JoinTable(name = "apprenantcompetence", joinColumns = @JoinColumn(name = "idCom"),
+            inverseJoinColumns = @JoinColumn(name = "idApp"))*/
     @ManyToMany(mappedBy = "apprenantCompetences")
     private List<ApprenantsEntity> apprenantCompetences;
     public List<ApprenantsEntity> getApprenantCompetences() {
