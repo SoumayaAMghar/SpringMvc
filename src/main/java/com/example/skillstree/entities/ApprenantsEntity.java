@@ -15,16 +15,27 @@ public class ApprenantsEntity {
     private String email;
     private String password;
 
-    public List<ApprenantCompetence> getApprenantCompetences() {
+    public List<CompetencesEntity> getApprenantCompetences() {
         return apprenantCompetences;
     }
 
-    public void setApprenantCompetences(List<ApprenantCompetence> apprenantCompetences) {
+    public void setApprenantCompetences(List<CompetencesEntity> apprenantCompetences) {
         this.apprenantCompetences = apprenantCompetences;
     }
 
-    @OneToMany(mappedBy = "apprenant")
-    private List<ApprenantCompetence> apprenantCompetences;
+    /*
+    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE})
+            @JoinTable(name = "promostoapprenant", joinColumns = @JoinColumn(name = "promoId"),
+            inverseJoinColumns = @JoinColumn(name = "apprenantId"))
+     */
+   // @ManyToMany(mappedBy = "apprenant")
+   // private List<ApprenantCompetence> apprenantCompetences;
+
+    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE})
+    @JoinTable(name = "apprenantcompetence", joinColumns = @JoinColumn(name = "idApp"),
+            inverseJoinColumns = @JoinColumn(name = "idCom"))
+    private List<CompetencesEntity> apprenantCompetences;
+
 
     public Long getId() {
         return id;

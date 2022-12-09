@@ -13,13 +13,13 @@ public class CompetencesEntity {
     private String name;
     private String commentaire;
 
-    @OneToMany(mappedBy = "competence")
-    private List<ApprenantCompetence> apprenantCompetences;
-    public List<ApprenantCompetence> getApprenantCompetences() {
+    @ManyToMany(mappedBy = "apprenantCompetences")
+    private List<ApprenantsEntity> apprenantCompetences;
+    public List<ApprenantsEntity> getApprenantCompetences() {
         return apprenantCompetences;
     }
 
-    public void setApprenantCompetences(List<ApprenantCompetence> apprenantCompetences) {
+    public void setApprenantCompetences(List<ApprenantsEntity> apprenantCompetences) {
         this.apprenantCompetences = apprenantCompetences;
     }
     public Long getId() {

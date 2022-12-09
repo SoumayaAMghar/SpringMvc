@@ -13,10 +13,10 @@ public class Main {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         ApprenantsEntity apprenant = new ApprenantsEntity();
-        apprenant.setNom("aya");
-        apprenant.setPrenom("Amghar");
-        apprenant.setEmail("amghar.aya@gmail.com");
-        apprenant.setPassword("aya");
+        apprenant.setNom("Alaoui");
+        apprenant.setPrenom("Ahmed");
+        apprenant.setEmail("alaoui.ahmed@gmail.com");
+        apprenant.setPassword("alaoui");
 
         entityManager.getTransaction().begin();
         entityManager.persist(apprenant);
